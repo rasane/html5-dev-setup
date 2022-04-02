@@ -32,25 +32,25 @@ module.exports= {
     plugins: [
       new NodePolyfillPlugin(),
       new MiniCssExtractPlugin(),
-      /*new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({
         filename:'test.html',
         title: 'Mocha Tests',
         template: 'test/test.html'
-      })*/
+      })
     ],
-    // devServer: {
-    //     magicHtml: true,
-    //     hot: true,
-    //     port: 'auto',
-    //     server: {
-    //         type: 'https',
-    //         options: {
-    //             key: './localhost.key',
-    //             cert: './localhost.crt',
-    //         },
-    //     },
-    //     static:{
-    //         directory: path.join(__dirname, 'test/dist')
-    //     }
-    // }
+    devServer: {
+        magicHtml: true,
+        hot: true,
+        port: 'auto',
+        server: {
+            type: 'https',
+            options: {
+                key: './localhost.key',
+                cert: './localhost.crt',
+            },
+        },
+        static:{
+            directory: path.join(__dirname, 'test/dist')
+        }
+    }
 }
